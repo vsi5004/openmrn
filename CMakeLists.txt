@@ -160,6 +160,7 @@ set(IDF_DEPS
 
 idf_component_register(SRCS "${SRCS}"
                        INCLUDE_DIRS "${INCLUDE_DIRS}"
+                       PRIV_INCLUDE_DIRS "${PRIV_INCLUDE_DIRS}"
                        REQUIRES "${IDF_DEPS}")
 
 ###############################################################################
