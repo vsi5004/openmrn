@@ -137,6 +137,10 @@ set(INCLUDE_DIRS
     ${OPENMRNPATH}/include/esp-idf
 )
 
+set(PRIV_INCLUDE_DIRS
+    ${OPENMRNPATH}/include
+)
+
 set(IDF_DEPS
     app_update
     bootloader_support
