@@ -366,7 +366,7 @@ void handle_memory_config_frame()
                 set_error_code(DatagramDefs::INVALID_ARGUMENTS);
                 return;
             }
-            // fall through
+            [[fallthrough]];
         }
         case MemoryConfigDefs::COMMAND_ENTER_BOOTLOADER:
         {
@@ -392,7 +392,7 @@ void handle_memory_config_frame()
                 set_error_code(r);
                 return;
             }
-            // fall through
+            [[fallthrough]];
         }
         case MemoryConfigDefs::COMMAND_RESET:
         {
