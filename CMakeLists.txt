@@ -137,9 +137,10 @@ set(INCLUDE_DIRS
     ${OPENMRNPATH}/include/esp-idf
 )
 
-set(PRIV_INCLUDE_DIRS
-    ${OPENMRNPATH}/include
-)
+# NOTE: We intentionally do NOT add ${OPENMRNPATH}/include to any include path
+# because it contains include/freertos/FreeRTOSConfig.h which conflicts with
+# ESP-IDF's FreeRTOSConfig.h. Instead, wrapper files in include/esp-idf/
+# redirect to the actual files using relative paths.
 
 set(IDF_DEPS
     app_update
@@ -160,7 +161,6 @@ set(IDF_DEPS
 
 idf_component_register(SRCS "${SRCS}"
                        INCLUDE_DIRS "${INCLUDE_DIRS}"
-                       PRIV_INCLUDE_DIRS "${PRIV_INCLUDE_DIRS}"
                        REQUIRES "${IDF_DEPS}")
 
 ###############################################################################
